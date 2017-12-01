@@ -1,0 +1,40 @@
+-- Table: public.product
+
+-- DROP TABLE public.product;
+
+CREATE TABLE public.product
+(
+    id integer NOT NULL,
+    name text COLLATE pg_catalog."default",
+    price integer,
+    type text COLLATE pg_catalog."default",
+    CONSTRAINT product_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.product
+    OWNER to postgres;
+_____________________________________________
+
+-- Table: public.purchase
+
+-- DROP TABLE public.purchase;
+
+CREATE TABLE public.purchase
+(
+    "productAmount" integer NOT NULL,
+    "productName" text COLLATE pg_catalog."default",
+    "unitPrice" text COLLATE pg_catalog."default",
+    "totalPrice" integer,
+    CONSTRAINT purchase_pkey PRIMARY KEY ("productAmount")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.purchase
+    OWNER to postgres;
